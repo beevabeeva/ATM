@@ -32,7 +32,7 @@ and following the instructions.
 
 No matter which you choose, you'll need to install the mysql client developer
 library in order for SQLAlchemy to work correctly::
-
+    
     $ sudo apt-get install libmysqlclient-dev
 
 3. Install Python dependencies
@@ -47,9 +47,50 @@ We recommend using `pip <https://pip.pypa.io/en/stable>`_ and `virtualenv
 Next, create the virtual environment and enter into it::
 
     $ virtualenv atm-env
+    $ * see note below: install python-devel
     $ . atm-env/bin/activate
     (atm-env) $
+    
+    
+**Note:**
+        Python developement packages need to be installed. This can be done after activating your virtualenv, but BEFORE running `python setup.py install`
+        Here is how to do that (from https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory):
 
+
+For `apt` (**Ubuntu, Debian...**)::
+
+        sudo apt-get install python-dev   # for python2.x installs
+        sudo apt-get install python3-dev  # for python3.x installs
+    
+For `yum` (**CentOS, RHEL...**)::
+
+    sudo yum install python-devel   # for python2.x installs
+    sudo yum install python34-devel   # for python3.4 installs (substitute 34 for your version. E.g 3.6 = python36-devel
+
+
+For `dnf` (**Fedora...**)::
+
+    sudo dnf install python2-devel  # for python2.x installs
+    sudo dnf install python3-devel  # for python3.x installs
+
+For `zypper` (**openSUSE...**)::
+
+    sudo zypper in python-devel   # for python2.x installs
+    sudo zypper in python3-devel  # for python3.x installs
+
+For `apk` (**Alpine...**)::
+
+    # This is a departure from the normal Alpine naming
+    # scheme, which uses py2- and py3- prefixes
+    sudo apk add python2-dev  # for python2.x installs
+    sudo apk add python3-dev  # for python3.x installs
+
+For `apt-cyg` (**Cygwin...**)::
+
+    apt-cyg install python-devel   # for python2.x installs
+    apt-cyg install python3-devel  # for python3.x installs
+    
+    
 The required packages are:
 
 .. literalinclude:: ../../requirements.txt
