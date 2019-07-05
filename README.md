@@ -113,6 +113,42 @@ ATM is compatible with and has been tested on Python 2.7, 3.5, and 3.6.
    . venv/bin/activate
    python setup.py install
    ```
+Note: Python developement packages need to be installed. This can be done after activating your virtualenv, but BEFORE running '''python setup.py install'''
+Here is how to do that (from https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory):
+
+
+For `apt` (**Ubuntu, Debian...**):
+
+    sudo apt-get install python-dev   # for python2.x installs
+    sudo apt-get install python3-dev  # for python3.x installs
+
+For `yum` (**CentOS, RHEL...**):
+
+    sudo yum install python-devel   # for python2.x installs
+    sudo yum install python34-devel   # for python3.4 installs (substitute 34 for your version. E.g 3.6 = python36-devel
+
+
+For `dnf` (**Fedora...**):
+
+    sudo dnf install python2-devel  # for python2.x installs
+    sudo dnf install python3-devel  # for python3.x installs
+
+For `zypper` (**openSUSE...**):
+
+    sudo zypper in python-devel   # for python2.x installs
+    sudo zypper in python3-devel  # for python3.x installs
+
+For `apk` (**Alpine...**):
+
+    # This is a departure from the normal Alpine naming
+    # scheme, which uses py2- and py3- prefixes
+    sudo apk add python2-dev  # for python2.x installs
+    sudo apk add python3-dev  # for python3.x installs
+
+For `apt-cyg` (**Cygwin...**):
+
+    apt-cyg install python-devel   # for python2.x installs
+    apt-cyg install python3-devel  # for python3.x installs
 
 ## Quick Usage
 
