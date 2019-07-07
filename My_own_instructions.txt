@@ -1,10 +1,5 @@
-#! how to set this shit up
+#! how to set this up
 
-___________________________
-Working as root (I know... have problems when not running as root. Thiss ATMs fault.)
-
-1. Own a directory: sudo chown -R $USER ~/.blabla
-2.
 
 
 
