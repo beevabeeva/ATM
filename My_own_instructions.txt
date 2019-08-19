@@ -285,3 +285,38 @@ Example:
 
 5. Make a script to this automatically.	
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------
+Using my Linux aliases on the cluster to run ATM:
+
+--------- aliases (these are already setup on (and specific to) my cluster account----------------------------------
+alias en="source atm-venv/bin/activate"
+alias die="deactivate"
+alias atmtest="atm enter_data --train-path /home-mscluster/abank/research/ATM/atm/demos/pollution.csv"
+alias atm-credit="atm enter_data --train-path /home-mscluster/abank/research/ATM/atm/demos/credit-g_1.csv"
+alias work="cd /home-mscluster/abank/research/ATM/;en"
+alias worker="atm worker"
+alias atm-cluster="python /home-mscluster/abank/scripts/atmCluster_brute_force.py"
+alias atm-run="work;worker"
+
+
+------------------------------------------------------
+
+
+
+1 . Log in to abank@mscluster
+	pw: Yee3Eey6
+
+2. Type: work
+This sets up the virtual envirnment and takes you to the research directory where ATM is setup
+
+3. Type: atmtest
+This will load the pollution dataset into ATM and prepare it to do model fitting on this data.
+
+4. Type: atm-cluster ha
+This will open an xpanes session over the ha nodes of ms-cluster.
+Then this will run an atm worker on each of the nodes in ha. All the workers are working on the same pollution dataset we had set up in step 3.
+
+5. When the workers have all completed, type: exit
+You should now be out of xpanes and back in node0
+
