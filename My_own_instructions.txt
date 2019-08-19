@@ -308,14 +308,18 @@ alias atm-run="work;worker"
 	pw: Yee3Eey6
 
 2. Type: work
-This sets up the virtual envirnment and takes you to the research directory where ATM is setup
+This sets up the virtual envirnment and takes you to the research directory where ATM is setup.
+NB: You *must* be in the virtual-env for this to work. i.e do not skip this step.
 
 3. Type: atmtest
-This will load the pollution dataset into ATM and prepare it to do model fitting on this data.
+This will load the pollution dataset into ATM and prepare it to do model fitting on this data. 
 
-4. Type: atm-cluster ha
+
+4. Type: atm-cluster -p ha
 This will open an xpanes session over the ha nodes of ms-cluster.
 Then this will run an atm worker on each of the nodes in ha. All the workers are working on the same pollution dataset we had set up in step 3.
+Additionally, you can run this command with -p gpu or -p batch1/2/3/4/5/6 to use different partitions of the cluster.
+You can also use the -q flag to run the job quietly and the -e flag to automatically exit the xpanes session once all workers finish.
 
 5. When the workers have all completed, type: exit
 You should now be out of xpanes and back in node0
